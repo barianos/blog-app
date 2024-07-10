@@ -21,3 +21,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/users/{user}/posts', [UserController::class, 'userPosts'])
     ->middleware('auth:sanctum')
     ->name('user.posts');
+    
+Route::get('/users/{userId}/posts', [UserPostController::class, 'index'])
+    ->middleware('auth')
+    ->name('user.posts.index');

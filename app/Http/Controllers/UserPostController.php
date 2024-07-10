@@ -18,7 +18,7 @@ class UserPostController extends Controller
 
     public function userPosts(User $user)
     {
-        $posts = $user->posts();
+        $posts = $user->posts;
         return response()->json($posts);
     }
 }
