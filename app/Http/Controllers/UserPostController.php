@@ -15,4 +15,10 @@ class UserPostController extends Controller
 
         return view('posts.user-posts',compact('user','posts'));
     }
+
+    public function userPosts(User $user)
+    {
+        $posts = $user->posts();
+        return response()->json($posts);
+    }
 }
