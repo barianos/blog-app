@@ -25,3 +25,7 @@ Route::get('/users/{user}/posts', [UserController::class, 'userPosts'])
 Route::get('/users/{userId}/posts', [UserPostController::class, 'index'])
     ->middleware('auth')
     ->name('user.posts.index');
+
+Route::get('/api/users/{user}/posts', [UserPostController::class, 'userPosts'])
+    ->middleware('auth:sanctum')
+    ->name('api.user.posts');
